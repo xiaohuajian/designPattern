@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="restsdk4zyy">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/restsdk4zyy.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

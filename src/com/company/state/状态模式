@@ -1,0 +1,29 @@
+状态模式：
+    public static final int SOLD_OUT = 0;
+    public static final int NO_MONEY = 1;
+    public static final int HAS_MONEY = 2;
+    public static final int SOLD = 3;
+
+    int state = SOLD_OUT;
+
+    类似这种的思想，用状态来表明事物的行为特征，并根据不同的状态去做出不同的动作。
+    GumballMachine 这是一个糖果机，用这样的模式去分析糖果机的状态并让其行为也根据
+    状态做出不同的选择。eg：
+        public void insertMoney(){
+            if (state == HAS_MONEY){
+                System.out.println("你已透过币");
+            }else if (state == SOLD_OUT){
+                System.out.println("投币无效，糖果已卖完");
+            }else if (state == SOLD){
+                System.out.println("请拿好刚刚给你的糖果");
+            }else if(state == NO_MONEY){
+                System.out.println("投币成功");
+                state = HAS_MONEY;
+            }
+        }
+
+    所以这里我们需要好好想想，这是一个很常用的思想。
+
+    改进：可以用枚举来替换常量值有时候。
+
+    或者想想 android代码中，有很多这种用法，比如 acitiviy的启动模式，intent的flag等。
